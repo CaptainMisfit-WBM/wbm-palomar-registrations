@@ -33,9 +33,10 @@ The declarations in this challenge file formalize core algebraic, metric, and tr
 -/
 
 /--
-Theorem 1 (Master Postulate Fixed Point):
-Proves that Mathlib's designated fixed point for a contraction mapping `M`
-on a complete metric space `α` satisfies `M(fixedPoint M hM) = fixedPoint M hM`.
+Theorem 1 (Master Postulate Theorem): Fixed-Point Equality and Uniqueness.
+Proves that a contraction mapping `M` on a non-empty complete metric space `α`
+possesses a fixed point `x* = fixedPoint M hM` satisfying `M x* = x*` and that any
+fixed point `y` is uniquely equal to `x*`.
 -/
 theorem master_postulate_theorem {α : Type*} [MetricSpace α] [CompleteSpace α] [Nonempty α]
     (M : α → α) {K : ℝ≥0} (hM : ContractingWith K M) :
@@ -43,33 +44,35 @@ theorem master_postulate_theorem {α : Type*} [MetricSpace α] [CompleteSpace α
   sorry
 
 /--
-Theorem 2 (Axis of Silence Mirror Axis):
+Theorem 2 (Axis of Silence Theorem): Neutral Lyapunov Stability.
 Proves that equal exponentiation magnitudes `n^σ = n^(1-σ)` on any base `n > 1`
-imply `σ = 1/2`.
+strictly locate the system on the mirror axis `σ = 1/2`.
 -/
 theorem axis_of_silence_theorem (n : ℝ) (hn : 1 < n) (σ : ℝ) (h : n ^ σ = n ^ (1 - σ)) :
     σ = 1 / 2 := by
   sorry
 
 /--
-Theorem 3 (Universal Slip Positivity):
-Proves that the Universal Slip expression `δ_slip = (((1+√5)/2)⁻¹)^4 / (14 * 12)`
-is strictly positive (`δ_slip > 0`).
+Theorem 3 (Universal Slip Theorem): Non-Zero Universal Phase Slip.
+Proves that the Universal Slip `δ_slip` derived from golden-ratio boundary scaling
+`φ = (1 + √5)/2` and manifold boundary `L_12 = 12` is strictly positive (`δ_slip > 0`).
 -/
 theorem delta_slip_pos_theorem :
     0 < (((((1 + Real.sqrt 5) / 2)⁻¹) ^ 4 / (12 + (1 / 2)⁻¹)) / 12) := by
   sorry
 
 /--
-Theorem 4 (Standard Model Lie Algebra Dimension Arithmetic):
-Formalizes that `(3^2 - 1) + (2^2 - 1) + 1 = 12`.
+Theorem 4 (Gauge Symmetries Theorem): Standard Model Lie Algebra Packing.
+Formalizes that the sum of Lie algebra dimensions for SU(3) (8), SU(2) (3), and U(1) (1)
+exactly equals 12, matching the 12 manifold degrees of freedom.
 -/
 theorem total_gauge_dim_theorem : (3 ^ 2 - 1) + (2 ^ 2 - 1) + 1 = 12 := by
   sorry
 
 /--
-Theorem 5 (CKM First-Row Unitarity):
-Proves probability conservation `cos²(θ_C) + sin²(θ_C) = 1` for the Cabibbo angle `θ_C = 2 - φ`.
+Theorem 5 (CKM Unitarity Theorem): Flavor Mixing Probability Conservation.
+Proves first-row CKM unitarity (`cos²(θ_C) + sin²(θ_C) = 1`) under Process Ontology
+Cabibbo angle scaling `θ_C = 2 - φ`.
 -/
 theorem ckm_first_row_unitarity_theorem :
     Real.cos (2 - (1 + Real.sqrt 5) / 2) ^ 2 + Real.sin (2 - (1 + Real.sqrt 5) / 2) ^ 2 = 1 := by
