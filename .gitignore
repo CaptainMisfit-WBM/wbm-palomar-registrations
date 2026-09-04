@@ -1,0 +1,4 @@
+# Ignore Lake build artifacts & downloaded packages
+.lake/
+*.export
+*.export.gz

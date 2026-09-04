@@ -1,0 +1,19 @@
+name = "process_ontology"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["ProcessOntologyLean"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "master"
+
+[[lean_lib]]
+name = "ProcessOntologyLean"
+srcDir = "process_ontology_lean"
