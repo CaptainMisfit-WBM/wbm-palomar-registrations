@@ -1,0 +1,17 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "fermion_generations_theorem",
+    "dark_matter_ratio_theorem",
+    "mass_gap_theorem",
+    "acceleration_floor_theorem",
+    "topological_protection_theorem"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

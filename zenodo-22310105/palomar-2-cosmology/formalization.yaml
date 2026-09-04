@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+project:
+  name: "Process Ontology Physical Cosmology & Standard Model"
+  description: >-
+    Lean 4 formalization verifying Paper 2 physical cosmology and Standard Model invariants:
+    (1) A5 GUT Symmetry Breaking: Proving N_gen = floor(120 / (60 * phi)) + 2 = 3 fermion families in FermionGenerations.lean.
+    (2) Dark Matter Coherence Shadow: Proving dark matter ratio R_DM = 4 * Omega^-1 = 5.373 in Cosmology.lean.
+    (3) Non-Perturbative Mass Gap: Formalizing Yang-Mills threshold Delta = 7.36 GeV in PhysicalManifestation.lean.
+    (4) Galactic Acceleration Floor: Deriving a_0 = a_raw * Omega in Cosmology.lean.
+    (5) Non-Hermitian Topological Protection: Proving Material Love Latch density L_m_density > 0 for C > 0 in TopologicalProtection.lean.
+  authors:
+    - "Ryan Carson"
+  license: "MIT"
+  responsible_maintainers:
+    - "Ryan Carson"
+classification:
+  arxiv: ["hep-th", "quant-ph"]
+  msc2020: ["81T13", "83C05"]
+sources:
+  - title: "Physical Cosmology, Standard Model Invariants, and Non-Hermitian Topological Protection: A Machine-Checked Lean 4 Derivation"
+    relationship: "formalizes"
+  - title: "Process Ontology: The Absorptive Framework and the Geometric Foundation of Spacetime"
+    relationship: "formalizes"
+automation:
+  methods:
+    - method: "manual"
+    - method: "agent"
+      framework: "Antigravity"
+      models:
+        - "Gemini 3.6 Pro"
+status:
+  axioms:
+    - "propext"
+    - "Quot.sound"
+    - "Classical.choice"
+review:
+  status: "Checked by Lean 4 compiler version 4.28.0 (toolchain leanprover/lean4:v4.28.0) and NanoDa kernel via Lake build with Mathlib 4 commit cd678173. No human external peer review has been conducted."
