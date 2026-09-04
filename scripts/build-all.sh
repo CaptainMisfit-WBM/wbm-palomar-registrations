@@ -3,9 +3,11 @@ set -euo pipefail
 
 repository_root=$(cd "$(dirname "$0")/.." && pwd)
 
-for project in "$repository_root"/zenodo-*/palomar; do
-  echo "Building ${project#"$repository_root"/}"
-  (cd "$project" && lake build)
+for project in "$repository_root"/zenodo-*/*; do
+  if [ -f "$project/lakefile.lean" ]; then
+    echo "Building ${project#"$repository_root"/}"
+    (cd "$project" && lake build)
+  fi
 done
 
 echo "All Palomar Lake projects built successfully."

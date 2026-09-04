@@ -27,7 +27,7 @@ automation:
     - method: "agent"
       framework: "Antigravity"
       models:
-        - "Gemini 1.5 Pro"
+        - "Gemini 3.6 Pro"
 status:
   axioms:
     - "propext"
