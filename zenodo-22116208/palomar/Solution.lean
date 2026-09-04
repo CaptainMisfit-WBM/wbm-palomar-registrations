@@ -14,7 +14,7 @@ set_option linter.style.whitespace false
 
 open NNReal ContractingWith Real
 
--- 1. Master Postulate Theorem
+-- 1. Master Postulate Fixed-Point Theorem
 theorem master_postulate_theorem {α : Type*} [MetricSpace α] [CompleteSpace α] [Nonempty α]
     (M : α → α) {K : ℝ≥0} (hM : ContractingWith K M) :
     M (ContractingWith.fixedPoint M hM) = ContractingWith.fixedPoint M hM :=
@@ -25,12 +25,12 @@ theorem axis_of_silence_theorem (n : ℝ) (hn : 1 < n) (σ : ℝ) (h : n ^ σ = 
     σ = 1 / 2 :=
   axis_of_silence n hn σ h
 
--- 3. Universal Phase Slip Theorem
+-- 3. Universal Phase Slip Positivity Theorem
 theorem delta_slip_pos_theorem :
     0 < (((((1 + Real.sqrt 5) / 2)⁻¹) ^ 4 / (12 + (1 / 2)⁻¹)) / 12) :=
   delta_slip_pos
 
--- 4. Gauge Symmetries Theorem
+-- 4. Gauge Symmetries Dimension Arithmetic
 theorem total_gauge_dim_theorem : (3 ^ 2 - 1) + (2 ^ 2 - 1) + 1 = 12 :=
   total_gauge_dim
 
