@@ -3,12 +3,12 @@ version: "v0.4"
 project:
   name: "Relational Ontopoiesis and Variational Vacuum Dynamics"
   description: >-
-    Lean 4 formalization verifying Paper 1 of the Process Ontology Master Series (DOI: 10.5281/zenodo.22307699):
-    (1) Ontopoiesis: Banach complete metric space fixed-point contraction M(x*) = x* in Ontopoiesis.lean.
-    (2) Conformal Golden Ratio & Axis of Silence: phi^2 - phi - 1 = 0 scaling and Lyapunov neutral stability along mirror plane sigma = 1/2 in ConformalScaling.lean and AxisOfSilence.lean.
-    (3) Quintic Valve & Universal Phase Slip: Abel-Ruffini non-solvability under S5 forcing non-zero phase slip delta_slip > 0 in ManifoldPlasticity.lean.
-    (4) Standard Model Lie Algebra Packing: dim(SU(3)) + dim(SU(2)) + dim(U(1)) = 12 matching the 3D Newton-Gregory kissing number L12 = 12 in GaugeSymmetries.lean.
-    (5) Variational Field Engine: Universal Cost Function C(X) stationary critical point minimization grad C(X*) = 0 in VariationalEngine.lean.
+    Lean 4 formalization verifying core mathematical building blocks for Paper 1 of the Process Ontology Master Series (DOI: 10.5281/zenodo.22307699):
+    (1) Master Postulate Fixed Point: Banach complete metric space contraction mapping M(x*) = x* in Ontopoiesis.lean.
+    (2) Axis of Silence Neutral Stability: Real exponent cancellation n^sigma = n^(1-sigma) implying sigma = 1/2 in AxisOfSilence.lean.
+    (3) Universal Phase Slip Positivity: Strict positivity of slip parameter delta_slip > 0 in ManifoldPlasticity.lean.
+    (4) Standard Model Lie Algebra Packing: Dimension sum (3^2 - 1) + (2^2 - 1) + 1 = 12 matching manifold degrees of freedom in GaugeSymmetries.lean.
+    (5) First-Row CKM Unitarity: Probability conservation cos^2(theta_C) + sin^2(theta_C) = 1 under angle scaling theta_C = 2 - phi in GravitySM.lean.
   authors:
     - "Ryan Carson"
   license: "MIT"
@@ -34,4 +34,4 @@ status:
     - "Quot.sound"
     - "Classical.choice"
 review:
-  status: "Machine-checked by Lean 4 compiler version v4.28.0 with Mathlib 4. 100% verified with 0 errors and 0 sorry statements."
+  status: "Automated machine check executed via Lean 4 compiler (v4.28.0) and NanoDa kernel. No human external peer review has been conducted."

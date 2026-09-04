@@ -3,11 +3,12 @@ version: "v0.4"
 project:
   name: "Process Ontology Lean"
   description: >-
-    Lean 4 formalization verifying the core mathematical foundations of Process Ontology:
-    (1) Ontopoiesis and Self-Correction: Mapping relational process updates to Banach complete metric space contraction mappings, proving the stable attractor fixed-point property M(x*) = x* in Ontopoiesis.lean.
-    (2) Non-Zero Universal Phase Slip: Proving delta_slip > 0 in ManifoldPlasticity.lean from golden-ratio boundary scaling (phi = (1 + sqrt 5)/2) and the 12-dimensional manifold boundary (L_12 = 12), ensuring the system does not collapse to static equilibrium.
-    (3) Standard Model Lie Algebra Packing: Formalizing the 12 manifold degrees of freedom matching the Lie algebra dimensions of SU(3) x SU(2) x U(1) ((3^2 - 1) + (2^2 - 1) + 1 = 12) in GaugeSymmetries.lean.
-    (4) Flavor Mixing and Quantum Unitarity: Proving first-row CKM probability conservation (cos^2(theta_C) + sin^2(theta_C) = 1) under Process Ontology angle scaling (theta_C = 2 - phi) in GravitySM.lean.
+    Lean 4 formalization verifying five elementary algebraic and topological building blocks for Process Ontology:
+    (1) Fixed-point property M(x*) = x* for complete metric space contraction mappings (specializing Mathlib's ContractingWith).
+    (2) Lyapunov neutral stability plane sigma = 1/2 from real exponent cancellation n^sigma = n^(1-sigma) for n > 1.
+    (3) Strict positivity of the Universal Slip parameter delta_slip > 0 via real arithmetic.
+    (4) Lie algebra total dimension arithmetic (3^2 - 1) + (2^2 - 1) + 1 = 12 for the Standard Model gauge group.
+    (5) First-row CKM unitarity cos^2(2 - phi) + sin^2(2 - phi) = 1 applying Mathlib's Pythagorean trigonometric identity.
   authors:
     - "Ryan Carson"
   license: "MIT"
@@ -34,4 +35,4 @@ status:
     - "Quot.sound"
     - "Classical.choice"
 review:
-  status: "Checked by Lean 4 compiler version 4.32.0. Fully verified with Mathlib 4 core axioms."
+  status: "Automated machine check executed via Lean 4 compiler (v4.28.0) and NanoDa kernel. No human external peer review has been conducted."
