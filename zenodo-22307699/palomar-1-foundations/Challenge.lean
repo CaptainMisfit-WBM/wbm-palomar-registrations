@@ -3,7 +3,6 @@ Paper: Relational Ontopoiesis and Variational Vacuum Dynamics: Machine-Checked F
 Paper Author: Ryan Carson (WBM Research)
 ORCID: https://orcid.org/0009-0009-7818-3517
 Zenodo Preprint DOI: https://doi.org/10.5281/zenodo.22307699
-Target Journal: Journal of Mathematical Physics (AIP) / Annals of Physics (Elsevier)
 Formalization: Ryan Carson, with automated assistance (Gemini 3.6 Pro / Lean 4)
 -/
 import Mathlib.Topology.MetricSpace.Contracting
