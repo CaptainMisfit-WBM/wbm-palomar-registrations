@@ -34,4 +34,4 @@ status:
     - "Quot.sound"
     - "Classical.choice"
 review:
-  status: "Checked by Lean 4 compiler version 4.28.0. Fully verified with Mathlib 4 core axioms."
+  status: "Checked by Lean 4 compiler version 4.32.0. Fully verified with Mathlib 4 core axioms."
