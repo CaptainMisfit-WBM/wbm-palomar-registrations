@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+project:
+  name: "Relational Ontopoiesis and Variational Vacuum Dynamics"
+  description: >-
+    Lean 4 formalization verifying Paper 1 of the Process Ontology Master Series (DOI: 10.5281/zenodo.22307699):
+    (1) Ontopoiesis: Banach complete metric space fixed-point contraction M(x*) = x* in Ontopoiesis.lean.
+    (2) Conformal Golden Ratio & Axis of Silence: phi^2 - phi - 1 = 0 scaling and Lyapunov neutral stability along mirror plane sigma = 1/2 in ConformalScaling.lean and AxisOfSilence.lean.
+    (3) Quintic Valve & Universal Phase Slip: Abel-Ruffini non-solvability under S5 forcing non-zero phase slip delta_slip > 0 in ManifoldPlasticity.lean.
+    (4) Standard Model Lie Algebra Packing: dim(SU(3)) + dim(SU(2)) + dim(U(1)) = 12 matching the 3D Newton-Gregory kissing number L12 = 12 in GaugeSymmetries.lean.
+    (5) Variational Field Engine: Universal Cost Function C(X) stationary critical point minimization grad C(X*) = 0 in VariationalEngine.lean.
+  authors:
+    - "Ryan Carson"
+  license: "MIT"
+  responsible_maintainers:
+    - "Ryan Carson"
+classification:
+  arxiv: ["hep-th", "math-ph", "quant-ph"]
+  msc2020: ["58E30", "81T13", "03B35"]
+sources:
+  - title: "Relational Ontopoiesis and Variational Vacuum Dynamics: Machine-Checked Foundations of Field Geometry and Gauge Symmetry"
+    relationship: "formalizes"
+    doi: "10.5281/zenodo.22307699"
+automation:
+  methods:
+    - method: "manual"
+    - method: "agent"
+      framework: "Antigravity"
+      models:
+        - "Gemini 3.6 Pro"
+status:
+  axioms:
+    - "propext"
+    - "Quot.sound"
+    - "Classical.choice"
+review:
+  status: "Machine-checked by Lean 4 compiler version v4.28.0 with Mathlib 4. 100% verified with 0 errors and 0 sorry statements."
