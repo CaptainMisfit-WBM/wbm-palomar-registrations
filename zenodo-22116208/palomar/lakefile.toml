@@ -1,7 +1,7 @@
-name = "process_ontology"
+name = "ProcessOntologyLean"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["ProcessOntologyLean"]
+defaultTargets = ["ProcessOntologyLean", "Challenge", "Solution"]
 
 [leanOptions]
 pp.unicode.fun = true
@@ -12,8 +12,13 @@ maxSynthPendingDepth = 3
 [[require]]
 name = "mathlib"
 scope = "leanprover-community"
-rev = "master"
+rev = "v4.28.0"
 
 [[lean_lib]]
 name = "ProcessOntologyLean"
-srcDir = "process_ontology_lean"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
