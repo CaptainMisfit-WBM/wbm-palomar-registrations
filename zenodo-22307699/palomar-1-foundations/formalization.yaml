@@ -15,7 +15,7 @@ project:
   responsible_maintainers:
     - "Ryan Carson"
 classification:
-  arxiv: ["hep-th", "math-ph", "quant-ph"]
+  arxiv: ["hep-th", "math-ph"]
   msc2020: ["58E30", "81T13", "03B35"]
 sources:
   - title: "Relational Ontopoiesis and Variational Vacuum Dynamics: Machine-Checked Foundations of Field Geometry and Gauge Symmetry"
