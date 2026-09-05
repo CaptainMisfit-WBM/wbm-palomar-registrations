@@ -19,7 +19,7 @@ theorem master_postulate_theorem {α : Type*} [MetricSpace α] [CompleteSpace α
     (M : α → α) {K : ℝ≥0} (hM : ContractingWith K M) :
     M (ContractingWith.fixedPoint M hM) = ContractingWith.fixedPoint M hM ∧
     ∀ y, M y = y → y = ContractingWith.fixedPoint M hM :=
-  ⟨master_postulate M hM, fun y hy => ContractingWith.fixedPoint_unique M hM hy⟩
+  ⟨master_postulate M hM, fun y hy => ContractingWith.fixedPoint_unique hM hy⟩
 
 -- 2. Axis of Silence Theorem
 theorem axis_of_silence_theorem (n : ℝ) (hn : 1 < n) (σ : ℝ) (h : n ^ σ = n ^ (1 - σ)) :
