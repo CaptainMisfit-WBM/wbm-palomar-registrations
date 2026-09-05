@@ -1,0 +1,17 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "cartographer_distance_theorem",
+    "p_vs_np_bound_theorem",
+    "consciousness_gear_theorem",
+    "resolution_operator_theorem",
+    "sde_drift_stationarity_theorem"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

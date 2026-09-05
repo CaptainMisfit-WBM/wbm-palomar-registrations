@@ -8,6 +8,7 @@ Monorepo containing formal mathematical verification packages for Palomar Regist
 | :--- | :--- | :--- | :--- |
 | `zenodo-22307699/palomar-1-foundations` | *Relational Ontopoiesis and Variational Vacuum Dynamics: Machine-Checked Foundations of Field Geometry and Gauge Symmetry* | [10.5281/zenodo.22307699](https://doi.org/10.5281/zenodo.22307699) | Verified (5 Theorems) |
 | `zenodo-22310105/palomar-2-cosmology` | *Physical Cosmology, Standard Model Invariants, and Non-Hermitian Topological Protection: A Machine-Checked Lean 4 Derivation* | [10.5281/zenodo.22310105](https://doi.org/10.5281/zenodo.22310105) | Verified (5 Theorems) |
+| `zenodo-22326037/palomar-3-epistemology` | *Epistemic Incompleteness, Cognitive Neurodynamics, and Ergodic Path-Minimization: A Machine-Checked Lean 4 Model of Embedded Observers* | [10.5281/zenodo.22326037](https://doi.org/10.5281/zenodo.22326037) | Verified (5 Theorems) |
 
 ## Repository Architecture
 

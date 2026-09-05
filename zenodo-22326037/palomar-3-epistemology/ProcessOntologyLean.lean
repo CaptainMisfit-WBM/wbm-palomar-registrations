@@ -1,0 +1,27 @@
+import ProcessOntologyLean.Ontopoiesis
+import ProcessOntologyLean.AxisOfSilence
+import ProcessOntologyLean.ManifoldPlasticity
+import ProcessOntologyLean.GaugeSymmetries
+import ProcessOntologyLean.GravitySM
+import ProcessOntologyLean.ConformalScaling
+import ProcessOntologyLean.VacuumIntegrity
+import ProcessOntologyLean.PhysicalManifestation
+import ProcessOntologyLean.VariationalEngine
+import ProcessOntologyLean.CausalQuad
+import ProcessOntologyLean.Decoherence
+import ProcessOntologyLean.Cosmology
+import ProcessOntologyLean.BlackHole
+import ProcessOntologyLean.FermionGenerations
+import ProcessOntologyLean.TimeScale
+import ProcessOntologyLean.PvsNPSolution
+import ProcessOntologyLean.MetaSelfConsistency
+import ProcessOntologyLean.AesopRules
+import ProcessOntologyLean.Basic
+import ProcessOntologyLean.CognitiveNeurodynamics
+import ProcessOntologyLean.CyclicResolution
+import ProcessOntologyLean.CartographerVerification
+import ProcessOntologyLean.TopologicalProtection
+import ProcessOntologyLean.SolverManual
+import ProcessOntologyLean.StochasticCalculus
+import ProcessOntologyLean.HardwareFFI
+

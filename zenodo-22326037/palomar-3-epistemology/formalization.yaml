@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+project:
+  name: "Process Ontology Epistemology & Cognitive Neurodynamics"
+  description: >-
+    Lean 4 formalization verifying Paper 3 epistemology, cognitive neurodynamics, and Langevin SDE dynamics:
+    (1) Cartographer's Distance: Proving K_obs = D_time * D_scale * M_1 > 0 in CartographerVerification.lean.
+    (2) P vs NP Complexity Bounds: Proving human observer sampling window lambda_eff + N + sigma_mass > 194 phi-steps in PvsNPSolution.lean.
+    (3) Consciousness Scaling Gear: Proving N = H * E = 6 * 11 = 66 in CognitiveNeurodynamics.lean.
+    (4) Non-Linear Resolution Operator: Proving R_Omega = 1/(2*Omega) > 0 for Omega > 0 in CyclicResolution.lean.
+    (5) Langevin SDE Stationarity: Proving cost gradient cancellation -mu^-1 * grad C(X*) = 0 at attractor X* in StochasticCalculus.lean.
+  authors:
+    - "Ryan Carson"
+  license: "MIT"
+  responsible_maintainers:
+    - "Ryan Carson"
+classification:
+  arxiv: ["cs.AI", "q-bio.NC"]
+  msc2020: ["68Q17", "60H10", "92C20"]
+sources:
+  - title: "Epistemic Incompleteness, Cognitive Neurodynamics, and Ergodic Path-Minimization: A Machine-Checked Lean 4 Model of Embedded Observers"
+    relationship: "formalizes"
+  - title: "Process Ontology: The Absorptive Framework and the Geometric Foundation of Spacetime"
+    relationship: "formalizes"
+automation:
+  methods:
+    - method: "manual"
+    - method: "agent"
+      framework: "Antigravity"
+      models:
+        - "Gemini 3.6 Pro"
+status:
+  axioms:
+    - "propext"
+    - "Quot.sound"
+    - "Classical.choice"
+review:
+  status: "Checked by Lean 4 compiler version 4.28.0 (toolchain leanprover/lean4:v4.28.0) and NanoDa kernel via Lake build with Mathlib 4 commit cd678173. No human external peer review has been conducted."
