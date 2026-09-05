@@ -17,3 +17,5 @@ import ProcessOntologyLean.PvsNPSolution
 import ProcessOntologyLean.MetaSelfConsistency
 import ProcessOntologyLean.AesopRules
 import ProcessOntologyLean.Basic
+import ProcessOntologyLean.SurrealMapping
+import ProcessOntologyLean.FusionAttractor

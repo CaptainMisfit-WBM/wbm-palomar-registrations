@@ -16,12 +16,23 @@ project:
     - "Ryan Carson"
 classification:
   arxiv: ["hep-th", "quant-ph"]
-  msc2020: ["81T13", "83C05"]
+  msc2020: ["81T13", "85A05"]
 sources:
   - title: "Physical Cosmology, Standard Model Invariants, and Non-Hermitian Topological Protection: A Machine-Checked Lean 4 Derivation"
+    authors:
+      - "Ryan Carson"
+    doi: "10.5281/zenodo.22310105"
+    url: "https://doi.org/10.5281/zenodo.22310105"
     relationship: "formalizes"
   - title: "Process Ontology: The Absorptive Framework and the Geometric Foundation of Spacetime"
-    relationship: "formalizes"
+    authors:
+      - "Ryan Carson"
+    relationship: "contextual"
+fidelity:
+  rating: "partial"
+  gaps:
+    - "Cosmological parameters and particle physics mass gaps are formalized via exact algebraic and physical invariant relations."
+    - "Full relativistic field tensor differential equations are outside the scope of this discrete Lean 4 formalization."
 automation:
   methods:
     - method: "manual"

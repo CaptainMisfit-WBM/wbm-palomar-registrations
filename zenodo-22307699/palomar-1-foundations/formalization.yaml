@@ -4,11 +4,11 @@ project:
   name: "Process Ontology Lean"
   description: >-
     Lean 4 formalization verifying five core mathematical building blocks of Paper 1 (Relational Ontopoiesis and Variational Vacuum Dynamics, Zenodo DOI: 10.5281/zenodo.22307699):
-    (1) Master Postulate Fixed Point: Proving fixed-point equality M(x*) = x* for complete metric space contraction mappings (specializing Mathlib's ContractingWith).
+    (1) Master Postulate Fixed Point & Uniqueness: Proving fixed-point equality M(x*) = x* and uniqueness x = y for complete metric space contraction mappings (specializing Mathlib's ContractingWith).
     (2) Neutral Lyapunov Stability: Proving mirror dimension sigma = 1/2 from real exponent cancellation n^sigma = n^(1-sigma) for n > 1.
     (3) Universal Phase Slip Positivity: Proving delta_slip > 0 from golden-ratio boundary scaling (phi = (1 + sqrt 5)/2) and 12D manifold boundary (L_12 = 12).
     (4) Standard Model Gauge Algebra Packing: Formalizing total Lie algebra dimension arithmetic (3^2 - 1) + (2^2 - 1) + 1 = 12.
-    (5) First-Row CKM Unitarity: Proving probability conservation cos^2(2 - phi) + sin^2(2 - phi) = 1 applying Mathlib's Pythagorean trigonometric identity.
+    (5) Trigonometric Normalization Identity: Proving probability conservation cos^2(2 - phi) + sin^2(2 - phi) = 1 applying Mathlib's Pythagorean trigonometric identity under golden-ratio angle scaling theta_C = 2 - phi.
   authors:
     - "Ryan Carson"
   license: "MIT"
@@ -16,12 +16,23 @@ project:
     - "Ryan Carson"
 classification:
   arxiv: ["hep-th", "quant-ph"]
-  msc2020: ["81T13", "83C05"]
+  msc2020: ["54E50", "47H10", "17B45"]
 sources:
   - title: "Relational Ontopoiesis and Variational Vacuum Dynamics: Machine-Checked Foundations of Field Geometry and Gauge Symmetry"
+    authors:
+      - "Ryan Carson"
+    doi: "10.5281/zenodo.22307699"
+    url: "https://doi.org/10.5281/zenodo.22307699"
     relationship: "formalizes"
   - title: "Circular Theory of Ego and Awareness: Flow Dynamics of Consciousness"
-    relationship: "adapts"
+    authors:
+      - "Ryan Carson"
+    relationship: "contextual"
+fidelity:
+  rating: "partial"
+  gaps:
+    - "Continuous metric field transformations and non-linear SDE dynamics are represented via core algebraic and metric space building blocks."
+    - "Full non-linear field PDE dynamics remain outside the scope of this discrete Lean 4 formalization."
 automation:
   methods:
     - method: "manual"

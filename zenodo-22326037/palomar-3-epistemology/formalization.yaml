@@ -19,9 +19,20 @@ classification:
   msc2020: ["68Q17", "60H10", "92C20"]
 sources:
   - title: "Epistemic Incompleteness, Cognitive Neurodynamics, and Ergodic Path-Minimization: A Machine-Checked Lean 4 Model of Embedded Observers"
+    authors:
+      - "Ryan Carson"
+    doi: "10.5281/zenodo.22326037"
+    url: "https://doi.org/10.5281/zenodo.22326037"
     relationship: "formalizes"
   - title: "Process Ontology: The Absorptive Framework and the Geometric Foundation of Spacetime"
-    relationship: "formalizes"
+    authors:
+      - "Ryan Carson"
+    relationship: "contextual"
+fidelity:
+  rating: "partial"
+  gaps:
+    - "Cognitive dynamics and Langevin SDE stationary drift relations are represented via exact continuous variable bounds."
+    - "Full neurophysiological spiking networks remain outside the scope of this discrete Lean 4 formalization."
 automation:
   methods:
     - method: "manual"

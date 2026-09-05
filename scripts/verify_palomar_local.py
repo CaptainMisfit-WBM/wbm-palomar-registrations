@@ -97,6 +97,19 @@ def audit_project(proj_dir):
         if not rep_axioms.issubset(STANDARD_AXIOMS):
             errors.append(f"status.axioms contains non-standard axioms: {rep_axioms - STANDARD_AXIOMS}")
 
+        # Check for off-topic MSC2020 codes like 83C05 if no GR tensor equations exist
+        BANNED_OFFTOPIC_MSC = {"83C05"}
+        found_offtopic = [c for c in msc if c in BANNED_OFFTOPIC_MSC]
+        if found_offtopic:
+            errors.append(f"classification.msc2020 contains off-topic code(s) {found_offtopic}. Replace with relevant mathematics codes (e.g. 54E50, 47H10, 17B45).")
+
+        # Check structured fidelity block disclosure
+        fidelity = meta.get("fidelity", {})
+        if not fidelity or "gaps" not in fidelity:
+            errors.append("formalization.yaml missing structured 'fidelity' block with 'gaps' list.")
+        else:
+            print("  ✅ Structured fidelity and scope disclosure confirmed.")
+
         rev_status = str(meta.get("review", {}).get("status", ""))
         if "peer review" not in rev_status.lower() and "review" not in rev_status.lower():
             warnings.append("review.status should explicitly state whether human external peer review occurred.")
@@ -106,6 +119,10 @@ def audit_project(proj_dir):
         sources = meta.get("sources", [])
         if not sources or not all("title" in s and "relationship" in s for s in sources):
             errors.append("sources must contain non-empty list of items with 'title' and 'relationship'")
+        else:
+            for src in sources:
+                if src.get("relationship") == "formalizes" and ("doi" not in src or "authors" not in src):
+                    errors.append(f"Source '{src.get('title')[:30]}...' formalizes paper but lacks 'doi' or 'authors' metadata.")
 
         print("  ✅ formalization.yaml metadata schema v0.4 passed!")
     except Exception as e:

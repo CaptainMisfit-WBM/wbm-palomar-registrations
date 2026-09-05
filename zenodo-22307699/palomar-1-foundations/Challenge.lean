@@ -40,7 +40,8 @@ fixed point `y` is uniquely equal to `x*`.
 -/
 theorem master_postulate_theorem {α : Type*} [MetricSpace α] [CompleteSpace α] [Nonempty α]
     (M : α → α) {K : ℝ≥0} (hM : ContractingWith K M) :
-    M (ContractingWith.fixedPoint M hM) = ContractingWith.fixedPoint M hM := by
+    M (ContractingWith.fixedPoint M hM) = ContractingWith.fixedPoint M hM ∧
+    ∀ y, M y = y → y = ContractingWith.fixedPoint M hM := by
   sorry
 
 /--
