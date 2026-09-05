@@ -6,12 +6,13 @@ Monorepo containing formal mathematical verification packages for Palomar Regist
 
 | Entry Directory | Paper / Monograph | Zenodo DOI | Status |
 | :--- | :--- | :--- | :--- |
-| `zenodo-22116208/palomar` | *Continuous Field Semantics and Discrete Proof-Assistant Verification: A Unified Lean 4 Conceptual Audit of Process Ontology and KTLean* | [10.5281/zenodo.22116208](https://doi.org/10.5281/zenodo.22116208) | Verified (5 Theorems) |
+| `zenodo-22307699/palomar-1-foundations` | *Relational Ontopoiesis and Variational Vacuum Dynamics: Machine-Checked Foundations of Field Geometry and Gauge Symmetry* | [10.5281/zenodo.22307699](https://doi.org/10.5281/zenodo.22307699) | Verified (5 Theorems) |
+| `zenodo-22310105/palomar-2-cosmology` | *Physical Cosmology, Standard Model Invariants, and Non-Hermitian Topological Protection: A Machine-Checked Lean 4 Derivation* | [10.5281/zenodo.22310105](https://doi.org/10.5281/zenodo.22310105) | Verified (5 Theorems) |
 
 ## Repository Architecture
 
 The repository follows the multi-project monorepo layout:
-- **`zenodo-XXXXX/palomar/`**: Individual formalization project directories containing `Challenge.lean`, `Solution.lean`, `comparator.json`, `formalization.yaml`, `lean-toolchain`, and Lake build configurations.
+- **`zenodo-XXXXX/palomar-Y/`**: Individual formalization project directories containing `Challenge.lean`, `Solution.lean`, `comparator.json`, `formalization.yaml`, `lean-toolchain`, and Lake build configurations.
 - **`scripts/`**: Preflight verification tools (`check-layout.rb`, `build-all.sh`, `verify_palomar_local.py`).
 
 ## License
