@@ -2,6 +2,8 @@
 """
 Palomar Local Verification & Structural Preflight Auditor
 Comprehensive 7-Step Auditor based on Palomar Registry rules and check-layout.rb.
+Includes automated checks for reserve tokens (e.g. 'λ'), Mathlib import correctness,
+arXiv classification bounds, and non-human review status disclosures.
 """
 import sys, json, os, subprocess, re
 
@@ -70,7 +72,7 @@ def audit_project(proj_dir):
             errors.append(f"Lean version v{major}.{minor} is below Palomar floor v4.28.0")
 
     # 2. Schema Audit (formalization.yaml)
-    print(f"\n[2/7] Auditing formalization.yaml Schema v0.4...")
+    print(f"\n[2/7] Auditing formalization.yaml Schema v0.4 & Disclosures...")
     try:
         import yaml
         with open(form_p) as f:
@@ -94,6 +96,16 @@ def audit_project(proj_dir):
         rep_axioms = set(meta.get("status", {}).get("axioms", []))
         if not rep_axioms.issubset(STANDARD_AXIOMS):
             errors.append(f"status.axioms contains non-standard axioms: {rep_axioms - STANDARD_AXIOMS}")
+
+        rev_status = str(meta.get("review", {}).get("status", ""))
+        if "peer review" not in rev_status.lower() and "review" not in rev_status.lower():
+            warnings.append("review.status should explicitly state whether human external peer review occurred.")
+        else:
+            print("  ✅ Explicit review status disclosure confirmed.")
+
+        sources = meta.get("sources", [])
+        if not sources or not all("title" in s and "relationship" in s for s in sources):
+            errors.append("sources must contain non-empty list of items with 'title' and 'relationship'")
 
         print("  ✅ formalization.yaml metadata schema v0.4 passed!")
     except Exception as e:
@@ -130,8 +142,8 @@ def audit_project(proj_dir):
     else:
         print(f"  ℹ️ Standard View: {line_count} lines, {ch_size} bytes.")
 
-    # 5. Solution.lean Axiom & 'sorry' Audit
-    print(f"\n[5/7] Auditing Solution.lean for Banned Primitives & 'sorry'...")
+    # 5. Solution & Module Syntax / Primitive / Reserved Character Audit
+    print(f"\n[5/7] Auditing Lean Modules for Reserved Characters ('λ'), Banned Primitives & 'sorry'...")
     with open(sol_p) as f:
         sol_content = f.read()
 
@@ -141,8 +153,25 @@ def audit_project(proj_dir):
     if re.search(r'\bnative_decide\b|Lean\.ofReduceBool', sol_content):
         errors.append("Solution.lean contains banned native proof primitive (native_decide)!")
 
-    if not any("sorry" in err for err in errors):
-        print("  ✅ Solution.lean contains 0 'sorry' statements and 0 banned primitives!")
+    # Scan all .lean files in project for reserved character 'λ' as variable binding
+    for root, _, files in os.walk(abs_proj):
+        if ".lake" in root:
+            continue
+        for fname in files:
+            if fname.endswith(".lean"):
+                f_full = os.path.join(root, fname)
+                with open(f_full, encoding="utf-8", errors="ignore") as lf:
+                    raw_code = lf.read()
+                    # Strip comments
+                    code_no_comments = re.sub(r'/-[\s\S]*?-/|--.*$', '', raw_code, flags=re.MULTILINE)
+                    # Check for λ used as variable binding or parameter in code
+                    if re.search(r'[\(\:\=]\s*λ\b|\bλ_|\bλ\s*[\:\=]', code_no_comments):
+                        errors.append(f"{os.path.relpath(f_full, abs_proj)} uses reserved character 'λ' as variable identifier (replace with 'lambda')")
+                    if "import Mathlib.Basic.Real.Basic" in code_no_comments:
+                        errors.append(f"{os.path.relpath(f_full, abs_proj)} uses invalid import 'Mathlib.Basic.Real.Basic' (replace with 'Mathlib.Data.Real.Basic')")
+
+    if not any("sorry" in err or "λ" in err for err in errors):
+        print("  ✅ Solution.lean and modules contain 0 'sorry' statements, 0 banned primitives, and 0 reserved character bindings!")
 
     # 6. Lake Build Execution
     print(f"\n[6/7] Executing Lake Build...")
@@ -191,6 +220,6 @@ def audit_project(proj_dir):
 
 if __name__ == "__main__":
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    target = sys.argv[1] if len(sys.argv) > 1 else os.path.join(repo_root, "zenodo-22116208", "palomar")
+    target = sys.argv[1] if len(sys.argv) > 1 else os.path.join(repo_root, "zenodo-22307699", "palomar-1-foundations")
     success = audit_project(target)
     sys.exit(0 if success else 1)
