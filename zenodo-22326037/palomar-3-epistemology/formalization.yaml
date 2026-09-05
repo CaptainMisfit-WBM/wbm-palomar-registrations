@@ -35,4 +35,4 @@ status:
     - "Quot.sound"
     - "Classical.choice"
 review:
-  status: "Checked by Lean 4 compiler version 4.28.0 (toolchain leanprover/lean4:v4.28.0) and NanoDa kernel via Lake build with Mathlib 4 commit cd678173. No human external peer review has been conducted."
+  status: "Automated machine check executed via Lean 4 compiler (v4.32.0) and NanoDa kernel. No human external peer review has been conducted."
